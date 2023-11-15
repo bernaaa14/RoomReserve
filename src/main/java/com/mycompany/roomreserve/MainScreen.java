@@ -1,11 +1,13 @@
 package com.mycompany.roomreserve;
 import com.sun.tools.javac.Main;
+import com.toedter.calendar.JTextFieldDateEditor;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
@@ -24,6 +26,7 @@ public class MainScreen extends javax.swing.JFrame {
     public MainScreen() 
     {
         initComponents();  
+        
     }
     
     public static int total = 0;
@@ -54,7 +57,6 @@ public class MainScreen extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         homeLbl = new javax.swing.JLabel();
         roomLbl = new javax.swing.JLabel();
-        aboutLbl = new javax.swing.JLabel();
         hotelBg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,7 +98,7 @@ public class MainScreen extends javax.swing.JFrame {
         getContentPane().add(lbl4);
         lbl4.setBounds(40, 260, 560, 20);
 
-        footerPanel.setBackground(new java.awt.Color(255, 255, 255));
+        footerPanel.setBackground(new java.awt.Color(254, 253, 253));
         footerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         bedIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bedR.png"))); // NOI18N
@@ -121,6 +123,11 @@ public class MainScreen extends javax.swing.JFrame {
 
         checkOutChooser.setBackground(new java.awt.Color(255, 255, 255));
         checkOutChooser.setFont(new java.awt.Font("Quicksand Light", 0, 12)); // NOI18N
+        checkOutChooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                checkOutChooserPropertyChange(evt);
+            }
+        });
 
         checkOutIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/check-outR.png"))); // NOI18N
 
@@ -132,6 +139,11 @@ public class MainScreen extends javax.swing.JFrame {
         checkInChooser.setForeground(new java.awt.Color(255, 255, 255));
         checkInChooser.setFont(new java.awt.Font("Quicksand Light", 0, 12)); // NOI18N
         checkInChooser.setMaxSelectableDate(new java.util.Date(2524582860000L));
+        checkInChooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                checkInChooserPropertyChange(evt);
+            }
+        });
 
         submitBtn.setBackground(new java.awt.Color(0, 0, 0));
         submitBtn.setFont(new java.awt.Font("Quicksand", 1, 12)); // NOI18N
@@ -216,7 +228,7 @@ public class MainScreen extends javax.swing.JFrame {
         homeLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         homeLbl.setText("Home");
         getContentPane().add(homeLbl);
-        homeLbl.setBounds(500, 10, 60, 30);
+        homeLbl.setBounds(620, 10, 60, 30);
 
         roomLbl.setFont(new java.awt.Font("Quicksand Light", 0, 18)); // NOI18N
         roomLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -236,24 +248,7 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(roomLbl);
-        roomLbl.setBounds(600, 10, 58, 30);
-
-        aboutLbl.setFont(new java.awt.Font("Quicksand Light", 0, 18)); // NOI18N
-        aboutLbl.setForeground(new java.awt.Color(255, 255, 255));
-        aboutLbl.setText("About us");
-        aboutLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aboutLblMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                aboutLblMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                aboutLblMouseExited(evt);
-            }
-        });
-        getContentPane().add(aboutLbl);
-        aboutLbl.setBounds(700, 10, 80, 30);
+        roomLbl.setBounds(710, 10, 58, 30);
 
         hotelBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotel.jpg"))); // NOI18N
         getContentPane().add(hotelBg);
@@ -265,14 +260,6 @@ public class MainScreen extends javax.swing.JFrame {
     private void roomCmbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomCmbActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_roomCmbActionPerformed
-
-    private void aboutLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutLblMouseClicked
-        // TODO add your handling code here:
-        
-        RoomScreen rs = new RoomScreen();
-        rs.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_aboutLblMouseClicked
 
     private void roomLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomLblMouseClicked
         // TODO add your handling code here:
@@ -299,18 +286,8 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void roomLblMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomLblMouseExited
         // TODO add your handling code here:
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_roomLblMouseExited
-
-    private void aboutLblMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutLblMouseEntered
-        // TODO add your handling code here:
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_aboutLblMouseEntered
-
-    private void aboutLblMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutLblMouseExited
-        // TODO add your handling code here:
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_aboutLblMouseExited
 
     private void submitBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitBtnMouseExited
         // TODO add your handling code here:
@@ -322,26 +299,77 @@ public class MainScreen extends javax.swing.JFrame {
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_submitBtnMouseEntered
 
+    private void checkInChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_checkInChooserPropertyChange
+        // TODO add your handling code here:
+        if ("date".equals(evt.getPropertyName()))
+        {
+            Date checkOutDate = checkOutChooser.getDate();
+            Date checkInDate = (Date) evt.getNewValue();
+
+            if (checkOutDate != null && checkInDate != null && checkInDate.after(checkOutDate))
+            {
+                // If the check-in date is after the current check-out date, update the check-out date to the check-in date
+                checkOutChooser.setDate(checkInDate);
+                JOptionPane.showMessageDialog(null, "Check-out date cannot be before the check-in date!");
+            }
+   
+        }
+    }//GEN-LAST:event_checkInChooserPropertyChange
+
+    private void checkOutChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_checkOutChooserPropertyChange
+        // TODO add your handling code here:
+        if ("date".equals(evt.getPropertyName())) 
+        {
+            Date checkInDate = checkInChooser.getDate();
+            Date checkOutDate = (Date) evt.getNewValue();
+
+            if (checkInDate != null && checkOutDate != null && checkInDate.after(checkOutDate))
+            {
+                // If the check-in date is after the new check-out date, reset the check-in date to the check-out date
+                checkInChooser.setDate(checkOutDate);
+                JOptionPane.showMessageDialog(null, "Check-in date cannot be after the check-out date!");
+            }
+
+        }
+    }//GEN-LAST:event_checkOutChooserPropertyChange
+
+    
     private void compute()
     {
-    
-        checkIn = getDaysSinceReferenceDate(checkInChooser.getDate());
-        checkOut = getDaysSinceReferenceDate(checkOutChooser.getDate());
-        getRoom();
-        int totalDays = checkOut - checkIn;
-        total *= totalDays;
-        
-        
-        Confirmation c = new Confirmation();
-        c.setVisible(true);
-        c.checkInLbl.setText("Check In: "+ checkInChooser.getDate());
-        c.checkOutLbl.setText("Check Out: "+ checkOutChooser.getDate());
-        c.roomLbl.setText("Room type: "+ room);
-        c.totalLbl.setText("Total price: ₱"+ total);
-        this.dispose();
+        String checkInF = "";
+        String checkOutF = "";
+
+        Date checkInDate = checkInChooser.getDate();
+        Date checkOutDate = checkOutChooser.getDate();
+
+        if (checkInDate != null && checkOutDate != null) 
+        {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+            checkInF = dateFormat.format(checkInDate);
+            checkOutF = dateFormat.format(checkOutDate);
+
+            int checkIn = getDaysSinceReferenceDate(checkInDate);
+            int checkOut = getDaysSinceReferenceDate(checkOutDate);
+            int totalDays = checkOut - checkIn;
+
+            getRoom();
+            total *= totalDays;
+
+            OrderReceipt c = new OrderReceipt();
+            c.setVisible(true);
+            c.checkInLbl.setText("Check In: " + checkInF);
+            c.checkOutLbl.setText("Check Out: " + checkOutF);
+            c.roomLbl.setText("Room type: " + room);
+            c.totalLbl.setText("Total price: ₱" + total);
+            this.dispose();
+        }
+        else 
+        {
+            JOptionPane.showMessageDialog(null, "Please select both check-in and check-out dates.");
+        }
+
     }
      
-
     private void getRoom()
     {
         String roomType = roomCmb.getSelectedItem().toString();
@@ -397,7 +425,6 @@ public class MainScreen extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel aboutLbl;
     private javax.swing.JLabel bedIcon;
     private com.toedter.calendar.JDateChooser checkInChooser;
     private javax.swing.JLabel checkInIcon;

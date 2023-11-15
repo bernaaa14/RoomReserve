@@ -41,14 +41,12 @@ public class RoomScreen extends javax.swing.JFrame
         poolRoomLbl = new javax.swing.JLabel();
         poolPrice = new javax.swing.JLabel();
         homeBtn = new javax.swing.JLabel();
-        aboutBtn = new javax.swing.JLabel();
         roomBtn = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/room_assets/Standard.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 742));
         setMinimumSize(new java.awt.Dimension(1280, 742));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 742));
@@ -180,6 +178,9 @@ public class RoomScreen extends javax.swing.JFrame
         homeBtn.setForeground(new java.awt.Color(255, 255, 255));
         homeBtn.setText("Home");
         homeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeBtnMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 homeBtnMouseEntered(evt);
             }
@@ -190,23 +191,7 @@ public class RoomScreen extends javax.swing.JFrame
                 homeBtnMousePressed(evt);
             }
         });
-        getContentPane().add(homeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, -1, 30));
-
-        aboutBtn.setFont(new java.awt.Font("Quicksand", 0, 18)); // NOI18N
-        aboutBtn.setForeground(new java.awt.Color(255, 255, 255));
-        aboutBtn.setText("About us");
-        aboutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                aboutBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                aboutBtnMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                aboutBtnMousePressed(evt);
-            }
-        });
-        getContentPane().add(aboutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 80, 30));
+        getContentPane().add(homeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, -1, 30));
 
         roomBtn.setBackground(new java.awt.Color(51, 51, 51));
         roomBtn.setFont(new java.awt.Font("Quicksand", 0, 18)); // NOI18N
@@ -223,7 +208,7 @@ public class RoomScreen extends javax.swing.JFrame
                 roomBtnMousePressed(evt);
             }
         });
-        getContentPane().add(roomBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, 60, 30));
+        getContentPane().add(roomBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, 60, 30));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/room_assets/bgR.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 740));
@@ -259,6 +244,10 @@ public class RoomScreen extends javax.swing.JFrame
 
     private void homeBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMousePressed
         // TODO add your handling code here:
+        MainScreen m = new MainScreen();
+        m.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_homeBtnMousePressed
 
     private void roomBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomBtnMouseEntered
@@ -275,19 +264,10 @@ public class RoomScreen extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_roomBtnMousePressed
 
-    private void aboutBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutBtnMouseEntered
+    private void homeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseClicked
         // TODO add your handling code here:
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_aboutBtnMouseEntered
-
-    private void aboutBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutBtnMouseExited
-        // TODO add your handling code here:
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_aboutBtnMouseExited
-
-    private void aboutBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutBtnMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aboutBtnMousePressed
+        
+    }//GEN-LAST:event_homeBtnMouseClicked
 
  
     public static void main(String args[]) {
@@ -309,7 +289,6 @@ public class RoomScreen extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel aboutBtn;
     private javax.swing.JLabel background;
     private javax.swing.JButton bookButton;
     private javax.swing.JLabel execPrice;
