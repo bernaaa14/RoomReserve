@@ -52,7 +52,7 @@ public class MainScreen extends javax.swing.JFrame {
         checkInLbl = new javax.swing.JLabel();
         checkOutChooser = new com.toedter.calendar.JDateChooser();
         checkOutIcon = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        checkOutLbl = new javax.swing.JLabel();
         checkInChooser = new com.toedter.calendar.JDateChooser();
         submitBtn = new javax.swing.JButton();
         homeLbl = new javax.swing.JLabel();
@@ -131,9 +131,9 @@ public class MainScreen extends javax.swing.JFrame {
 
         checkOutIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/check-outR.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Quicksand SemiBold", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Check-out");
+        checkOutLbl.setFont(new java.awt.Font("Quicksand SemiBold", 0, 12)); // NOI18N
+        checkOutLbl.setForeground(new java.awt.Color(0, 0, 0));
+        checkOutLbl.setText("Check-out");
 
         checkInChooser.setBackground(new java.awt.Color(255, 255, 255));
         checkInChooser.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,7 +188,7 @@ public class MainScreen extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(checkInIcon)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(checkOutLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(footerPanelLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(checkOutChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -214,7 +214,7 @@ public class MainScreen extends javax.swing.JFrame {
                     .addGroup(footerPanelLayout.createSequentialGroup()
                         .addGroup(footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(checkInIcon)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(checkOutLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(checkOutChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(submitBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
@@ -292,11 +292,15 @@ public class MainScreen extends javax.swing.JFrame {
     private void submitBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitBtnMouseExited
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        submitBtn.setBackground(Color.BLACK);
+        submitBtn.setForeground(Color.WHITE);
     }//GEN-LAST:event_submitBtnMouseExited
 
     private void submitBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitBtnMouseEntered
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        submitBtn.setBackground(Color.WHITE);
+        submitBtn.setForeground(Color.BLACK);
     }//GEN-LAST:event_submitBtnMouseEntered
 
     private void checkInChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_checkInChooserPropertyChange
@@ -431,11 +435,11 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JLabel checkInLbl;
     private com.toedter.calendar.JDateChooser checkOutChooser;
     private javax.swing.JLabel checkOutIcon;
+    private javax.swing.JLabel checkOutLbl;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JPanel footerPanel;
     private javax.swing.JLabel homeLbl;
     private javax.swing.JLabel hotelBg;
-    private javax.swing.JLabel jLabel1;
     private static javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;

@@ -1,4 +1,5 @@
 package com.mycompany.roomreserve;
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -225,11 +226,15 @@ public class RoomScreen extends javax.swing.JFrame
     private void bookButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookButtonMouseEntered
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        bookButton.setBackground(Color.WHITE);
+        bookButton.setForeground(Color.BLACK);
     }//GEN-LAST:event_bookButtonMouseEntered
 
     private void bookButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookButtonMouseExited
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        bookButton.setBackground(Color.BLACK);
+        bookButton.setForeground(Color.WHITE);
     }//GEN-LAST:event_bookButtonMouseExited
 
     private void homeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseEntered

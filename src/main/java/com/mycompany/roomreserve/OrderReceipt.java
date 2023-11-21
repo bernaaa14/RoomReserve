@@ -13,7 +13,7 @@ public class OrderReceipt extends javax.swing.JFrame
         int receiptNum = generateReceiptNum(100000,200000);
         int telNum = generateReceiptNum(1000000000,2000000000);
         lblRecNo.setText("Cash Reciept: #" + receiptNum);
-        jLabel3.setText("Tel.no: " + telNum);
+        numLbl.setText("Tel.no: " + telNum);
     }
     
     public static int generateReceiptNum(int min, int max)
@@ -26,16 +26,14 @@ public class OrderReceipt extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        headingLbl = new javax.swing.JLabel();
+        addressLbl = new javax.swing.JLabel();
+        numLbl = new javax.swing.JLabel();
         lblRecNo = new javax.swing.JLabel();
         checkInLbl = new javax.swing.JLabel();
         checkOutLbl = new javax.swing.JLabel();
         roomLbl = new javax.swing.JLabel();
         totalLbl = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
         closeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,16 +41,16 @@ public class OrderReceipt extends javax.swing.JFrame
         setResizable(false);
         setSize(new java.awt.Dimension(215, 444));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Room Reserve");
+        headingLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        headingLbl.setForeground(new java.awt.Color(0, 0, 0));
+        headingLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headingLbl.setText("Room Reserve");
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Address: Lorem ipsum");
+        addressLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addressLbl.setText("Address: Lorem ipsum");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Tel. No: 12345");
+        numLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numLbl.setText("Tel. No: 12345");
 
         lblRecNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRecNo.setText("CASH RECEIPT:");
@@ -78,14 +76,11 @@ public class OrderReceipt extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addressLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,9 +91,9 @@ public class OrderReceipt extends javax.swing.JFrame
                             .addComponent(lblRecNo)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(jLabel1))
+                        .addComponent(headingLbl))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(49, 49, 49)
                         .addComponent(closeBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -106,18 +101,14 @@ public class OrderReceipt extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(headingLbl)
                 .addGap(4, 4, 4)
-                .addComponent(jLabel2)
+                .addComponent(addressLbl)
                 .addGap(4, 4, 4)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addComponent(numLbl)
+                .addGap(25, 25, 25)
                 .addComponent(lblRecNo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(checkInLbl)
                 .addGap(18, 18, 18)
                 .addComponent(checkOutLbl)
@@ -127,7 +118,7 @@ public class OrderReceipt extends javax.swing.JFrame
                 .addComponent(totalLbl)
                 .addGap(18, 18, 18)
                 .addComponent(closeBtn)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,15 +150,13 @@ public class OrderReceipt extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addressLbl;
     public javax.swing.JLabel checkInLbl;
     public javax.swing.JLabel checkOutLbl;
     private javax.swing.JButton closeBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel headingLbl;
     private javax.swing.JLabel lblRecNo;
+    private javax.swing.JLabel numLbl;
     public javax.swing.JLabel roomLbl;
     public javax.swing.JLabel totalLbl;
     // End of variables declaration//GEN-END:variables
