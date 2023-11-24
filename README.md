@@ -36,11 +36,11 @@ To run the RoomReserve application:
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests to help improve this project. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
+Contributions are welcome! Feel free to open issues or submit pull requests to help improve this project.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License].
 
 ## Acknowledgements
 
@@ -52,4 +52,4 @@ For any inquiries or support, feel free to contact the project maintainers.
 
 ---
 
-This README is a basic guide to get started with the RoomReserve project. For more detailed information, refer to the project documentation or additional resources within the repository.
+This README is a basic guide to getting started with the RoomReserve project. For more detailed information, refer to the project documentation or additional resources within the repository.
