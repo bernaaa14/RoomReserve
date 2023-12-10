@@ -5,15 +5,18 @@
 package com.mycompany.roomreserve;
 import java.util.Random;
 import javax.swing.UIManager;
+import javax.swing.ImageIcon;
 public class OrderReceipt extends javax.swing.JFrame
 {
     public OrderReceipt() 
     {
         initComponents();
+        setTitle("Thank you for booking with us!");
         int receiptNum = generateReceiptNum(100000,200000);
         int telNum = generateReceiptNum(1000000000,2000000000);
-        lblRecNo.setText("Cash Reciept: #" + receiptNum);
+        lblRecNo.setText("Cash Receipt: #" + receiptNum);
         numLbl.setText("Tel.no: " + telNum);
+        
     }
     
     public static int generateReceiptNum(int min, int max)
@@ -35,91 +38,86 @@ public class OrderReceipt extends javax.swing.JFrame
         roomLbl = new javax.swing.JLabel();
         totalLbl = new javax.swing.JLabel();
         closeBtn = new javax.swing.JButton();
+        LogoLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        black_background = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
         setSize(new java.awt.Dimension(215, 444));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        headingLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        headingLbl.setForeground(new java.awt.Color(0, 0, 0));
+        headingLbl.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        headingLbl.setForeground(new java.awt.Color(255, 255, 255));
         headingLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        headingLbl.setText("Room Reserve");
+        headingLbl.setText("OFFICIAL RECEIPT");
+        getContentPane().add(headingLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
+        addressLbl.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        addressLbl.setForeground(new java.awt.Color(255, 255, 255));
         addressLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         addressLbl.setText("Address: Lorem ipsum");
+        getContentPane().add(addressLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 174, -1));
 
+        numLbl.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        numLbl.setForeground(new java.awt.Color(255, 255, 255));
         numLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numLbl.setText("Tel. No: 12345");
+        getContentPane().add(numLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 140, -1));
 
+        lblRecNo.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        lblRecNo.setForeground(new java.awt.Color(255, 255, 255));
         lblRecNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblRecNo.setText("CASH RECEIPT:");
+        lblRecNo.setText("Cash Receipt:");
+        getContentPane().add(lblRecNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
+        checkInLbl.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        checkInLbl.setForeground(new java.awt.Color(255, 255, 255));
         checkInLbl.setText("Check-in:");
+        getContentPane().add(checkInLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
+        checkOutLbl.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        checkOutLbl.setForeground(new java.awt.Color(255, 255, 255));
         checkOutLbl.setText("Check-out:");
+        getContentPane().add(checkOutLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
+        roomLbl.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        roomLbl.setForeground(new java.awt.Color(255, 255, 255));
         roomLbl.setText("Room Type:");
+        getContentPane().add(roomLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
+        totalLbl.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        totalLbl.setForeground(new java.awt.Color(255, 255, 255));
         totalLbl.setText("Total: ");
+        getContentPane().add(totalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
+        closeBtn.setBackground(new java.awt.Color(204, 0, 0));
+        closeBtn.setForeground(new java.awt.Color(255, 255, 255));
         closeBtn.setText("Close");
+        closeBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
         closeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 closeBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(closeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 80, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addressLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(numLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(totalLbl)
-                            .addComponent(checkOutLbl)
-                            .addComponent(checkInLbl)
-                            .addComponent(roomLbl)
-                            .addComponent(lblRecNo)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(headingLbl))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(closeBtn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(headingLbl)
-                .addGap(4, 4, 4)
-                .addComponent(addressLbl)
-                .addGap(4, 4, 4)
-                .addComponent(numLbl)
-                .addGap(25, 25, 25)
-                .addComponent(lblRecNo)
-                .addGap(18, 18, 18)
-                .addComponent(checkInLbl)
-                .addGap(18, 18, 18)
-                .addComponent(checkOutLbl)
-                .addGap(18, 18, 18)
-                .addComponent(roomLbl)
-                .addGap(18, 18, 18)
-                .addComponent(totalLbl)
-                .addGap(18, 18, 18)
-                .addComponent(closeBtn)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        LogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RR-removebg-preview.png"))); // NOI18N
+        getContentPane().add(LogoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 90, 50));
+        LogoLabel.getAccessibleContext().setAccessibleName("LogoLabel");
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("-------------------------------------------------------------");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 310, -1));
+
+        black_background.setBackground(new java.awt.Color(0, 0, 0));
+        black_background.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                black_backgroundActionPerformed(evt);
+            }
+        });
+        getContentPane().add(black_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,11 +127,15 @@ public class OrderReceipt extends javax.swing.JFrame
         System.exit(0);
     }//GEN-LAST:event_closeBtnActionPerformed
 
+    private void black_backgroundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_black_backgroundActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_black_backgroundActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        String str = "com.formdev.flatlaf.themes.FlatMacLightLaf";
+        String str = "com.formdev.flatlaf.themes.FlatMacDarkLaf";
         try
         {
             UIManager.setLookAndFeel(str);
@@ -150,11 +152,14 @@ public class OrderReceipt extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LogoLabel;
     private javax.swing.JLabel addressLbl;
+    private javax.swing.JTextField black_background;
     public javax.swing.JLabel checkInLbl;
     public javax.swing.JLabel checkOutLbl;
     private javax.swing.JButton closeBtn;
     private javax.swing.JLabel headingLbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblRecNo;
     private javax.swing.JLabel numLbl;
     public javax.swing.JLabel roomLbl;

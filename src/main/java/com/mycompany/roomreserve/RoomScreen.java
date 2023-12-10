@@ -11,8 +11,6 @@ public class RoomScreen extends javax.swing.JFrame
  
     public RoomScreen() {
         initComponents();
-        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\aaron\\Documents\\NetBeansProjects\\RoomReserve\\src\\main\\resources\\icon.png");    
-        setIconImage(icon);
         setTitle("Rooms");
     }
 

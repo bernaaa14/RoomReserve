@@ -20,9 +20,9 @@
             <version>3.1.1</version>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
+            <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
-            <version>SNAPSHOT</version>
+            <version>RELEASE200</version>
         </dependency>
         <dependency>
             <groupId>com.toedter</groupId>
@@ -30,9 +30,9 @@
             <version>1.4</version>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>jgoodies-looks-2.4.1</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-looks</artifactId>
+            <version>2.7.0</version>
         </dependency>
         <dependency>
             <groupId>com.jtattoo</groupId>
@@ -42,8 +42,8 @@
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <exec.mainClass>com.mycompany.roomreserve.RoomReserve</exec.mainClass>
     </properties>
     
@@ -55,14 +55,30 @@
                 <includes>
                     
                     <include>qsb.ttf</include> <!-- Include font files -->
-                    
+                    <include>RR-removebg-preview.png</include>
+                    <include>bedR.png</include>
+                    <include>check-inR.png</include>
+                    <include>check-outR.png</include>
+                    <include>icon.png</include>
+                    <include>room_assets/Executive.jpg</include>
+                    <include>room_assets/ExecutiveR.jpg</include>
+                    <include>room_assets/PoolSide.jpg</include>
+                    <include>room_assets/PoolSideR.jpg</include>
+                    <include>room_assets/Standard.jpg</include>
+                    <include>room_assets/StandardR.jpg</include>
+                    <include>room_assets/family.jpg</include>
+                    <include>room_assets/familyR.jpg</include>
+                    <include>room_assets/bg.jpg</include>
+                    <include>room_assets/bgR.jpg</include>
+                    <include>room_assets/lobby.jpg</include>
+                    <include>room_assets/lobbyR.jpg</include>
                 </includes>
             </resource>
         </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.3.0</version>
                     <configuration>
                         <descriptorRefs>
                             <descriptorRef>jar-with-dependencies</descriptorRef>

@@ -300,7 +300,6 @@
           <Dimension value="[440, 160]"/>
         </Property>
         <Property name="requestFocusEnabled" type="boolean" value="false"/>
-        <Property name="rolloverEnabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bookButtonMouseEntered"/>

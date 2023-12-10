@@ -1,5 +1,4 @@
 package com.mycompany.roomreserve;
-import com.sun.tools.javac.Main;
 import com.toedter.calendar.JTextFieldDateEditor;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -13,6 +12,7 @@ import java.time.Month;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -27,13 +27,17 @@ public class MainScreen extends javax.swing.JFrame {
     {
         initComponents();  
         
+      
+     
+        
+
     }
     
     public static int total = 0;
     public static int checkIn;
     public static int checkOut; 
     public static String room = "";
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -69,6 +73,7 @@ public class MainScreen extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         logoHeadingImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RR-removebg-preview.png"))); // NOI18N
+        logoHeadingImg.setLabelFor(logoHeadingImg);
         getContentPane().add(logoHeadingImg);
         logoHeadingImg.setBounds(10, 10, 100, 60);
 
@@ -82,7 +87,7 @@ public class MainScreen extends javax.swing.JFrame {
         lbl2.setForeground(new java.awt.Color(255, 255, 255));
         lbl2.setText("Reserve with Ease Today!");
         getContentPane().add(lbl2);
-        lbl2.setBounds(40, 170, 310, 30);
+        lbl2.setBounds(40, 170, 294, 32);
 
         lbl3.setFont(new java.awt.Font("Quicksand SemiBold", 0, 12)); // NOI18N
         lbl3.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,6 +107,7 @@ public class MainScreen extends javax.swing.JFrame {
         footerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         bedIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bedR.png"))); // NOI18N
+        bedIcon.setLabelFor(bedIcon);
 
         roomTypeLbl.setFont(new java.awt.Font("Quicksand SemiBold", 0, 12)); // NOI18N
         roomTypeLbl.setForeground(new java.awt.Color(0, 0, 0));
@@ -116,6 +122,7 @@ public class MainScreen extends javax.swing.JFrame {
         });
 
         checkInIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/check-inR.png"))); // NOI18N
+        checkInIcon.setLabelFor(checkOutIcon);
 
         checkInLbl.setFont(new java.awt.Font("Quicksand SemiBold", 0, 12)); // NOI18N
         checkInLbl.setForeground(new java.awt.Color(0, 0, 0));
@@ -130,6 +137,7 @@ public class MainScreen extends javax.swing.JFrame {
         });
 
         checkOutIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/check-outR.png"))); // NOI18N
+        checkOutIcon.setLabelFor(checkInIcon);
 
         checkOutLbl.setFont(new java.awt.Font("Quicksand SemiBold", 0, 12)); // NOI18N
         checkOutLbl.setForeground(new java.awt.Color(0, 0, 0));
@@ -248,7 +256,7 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(roomLbl);
-        roomLbl.setBounds(710, 10, 58, 30);
+        roomLbl.setBounds(710, 10, 56, 30);
 
         hotelBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotel.jpg"))); // NOI18N
         getContentPane().add(hotelBg);
@@ -427,6 +435,7 @@ public class MainScreen extends javax.swing.JFrame {
                 new MainScreen().setVisible(true);
             }
         });
+       
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bedIcon;
@@ -450,4 +459,5 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JLabel roomTypeLbl;
     private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables
+
 }
